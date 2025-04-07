@@ -1,0 +1,328 @@
+/* --- Color & Font Variables --- */
+:root {
+    --primary-color: #2F4F4F; /* Forest Green */
+    --secondary-color: #F8F9FA; /* Lighter Beige/Off-white - Updated for cleaner background */
+    --accent-color: #E07A5F; /* Terracotta/Warm Orange */
+    --neutral-color: #BCC5BF; /* Adjusted neutral */
+    --text-color: #333740; /* Slightly softer dark gray */
+    --light-color: #FFFFFF; /* White */
+    --border-color: #dee2e6; /* Standard border color */
+
+    /* Modern Font Pairing */
+    --heading-font: 'Merriweather', serif; /* Example: Elegant Serif */
+    --body-font: 'Lato', sans-serif; /* Example: Clean Sans-serif */
+
+    /* Spacing */
+    --section-padding: 6rem 0; /* Generous padding for sections */
+    --navbar-height: 60px; /* Approximate height for padding calculation */
+}
+
+/* --- Base & Typography --- */
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--light-color);
+    font-size: 16.5px; /* Slightly larger base font size */
+    line-height: 1.7; /* Improved line spacing for readability */
+    padding-top: var(--navbar-height); /* Add padding to body for fixed navbar */
+}
+
+h1, h2, h3, h4, h5, h6, .logo-text, .section-title {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    font-weight: 700; /* Ensure headings are bold */
+}
+
+h2.section-title {
+    margin-bottom: 4rem; /* Increased margin below section titles */
+    font-size: 2.5rem; /* Slightly larger section titles */
+}
+
+p {
+    margin-bottom: 1.25rem; /* Consistent paragraph spacing */
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #c76449; /* Darker accent on hover */
+}
+
+/* Import Google Fonts (Add this at the top if not already included in HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+
+/* --- Bootstrap Component Overrides & Custom Styles --- */
+
+/* Navbar */
+.navbar {
+    border-bottom: 1px solid var(--border-color);
+    min-height: var(--navbar-height); /* Ensure navbar has min height */
+    background-color: rgba(255, 255, 255, 0.95) !important; /* Slightly transparent white */
+    -webkit-backdrop-filter: blur(5px); /* Add Safari prefix */
+    backdrop-filter: blur(5px); /* Add blur effect */
+}
+.navbar .navbar-brand.logo-text {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.navbar .nav-link {
+    color: var(--text-color);
+    font-weight: 700; /* Bolder nav links */
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent-color);
+}
+/* Custom Accent Button in Navbar */
+.navbar .btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+.navbar .btn-accent:hover {
+    background-color: #c76449; /* Darker accent */
+    border-color: #c76449;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: calc(100vh - var(--navbar-height)); /* Adjust height considering navbar */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+.hero-section::before { /* Overlay for text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Adjust opacity */
+    z-index: 1;
+}
+.hero-content {
+    position: relative; /* Place content above overlay */
+    z-index: 2;
+}
+.hero-section h1 {
+    color: var(--light-color);
+    font-size: 3.5rem; /* Larger hero heading */
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Subtle text shadow */
+}
+.hero-section p {
+     color: rgba(255, 255, 255, 0.95); /* Brighter lead text */
+     font-size: 1.25rem;
+     font-weight: 400;
+}
+
+/* Buttons - Define Custom Variants or Override Bootstrap's */
+.btn {
+    padding: 0.75rem 1.5rem; /* More padding for buttons */
+    font-weight: 700;
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: all 0.3s ease; /* Transition for all properties */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--light-color);
+}
+.btn-accent:hover {
+    background-color: #c76449; /* Darker accent */
+    border-color: #c76449;
+    color: var(--light-color);
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--light-color);
+}
+.btn-primary-custom:hover {
+     background-color: #1a3a3a; /* Darker primary */
+    border-color: #1a3a3a;
+     color: var(--light-color);
+}
+
+.btn-light-custom {
+     background-color: var(--light-color); /* Changed to white */
+    border: 1px solid var(--border-color); /* Use border color */
+    color: var(--primary-color);
+}
+.btn-light-custom:hover {
+     background-color: var(--secondary-color); /* Light beige on hover */
+    border-color: var(--border-color);
+     color: var(--primary-color);
+}
+
+/* Custom Backgrounds */
+.bg-light-custom {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Menu Section Card Styles */
+.menu-item-card {
+    border: 1px solid var(--border-color); /* Standard border */
+    border-radius: 8px; /* Rounded corners for cards */
+    overflow: hidden; /* Ensure image corners are rounded */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--light-color); /* White background */
+}
+.menu-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important; /* Override BS shadow slightly */
+}
+.menu-item-img {
+    height: 220px; /* Slightly taller image */
+    object-fit: cover;
+}
+.menu-item-card .card-body {
+    padding: 1.5rem; /* More padding inside card body */
+}
+.price-text {
+    color: var(--accent-color);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+     background-color: var(--light-color);
+}
+.testimonial-card {
+    background-color: var(--light-color); /* White background */
+    border: 1px solid var(--border-color); /* Subtle border */
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Softer shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem; /* Consistent padding */
+}
+.testimonial-card blockquote p {
+    font-style: normal; /* Remove default italic */
+    font-size: 1.05rem;
+    color: var(--text-color);
+    margin-bottom: 1rem; /* Space before citation */
+}
+.testimonial-card blockquote i { /* Style the quote icon */
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+.testimonial-card cite {
+    font-weight: 700;
+    color: var(--primary-color); /* Use primary color for name */
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--primary-color);
+}
+.cta-section h2 {
+    color: var(--light-color);
+    font-size: 2.8rem;
+}
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--text-color);
+    color: var(--neutral-color); /* Use neutral for base text */
+    padding: 4rem 0; /* Increased footer padding */
+}
+.footer-heading {
+    color: var(--light-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+.footer-link {
+    color: var(--light-color); /* Light color for links for better contrast */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-link:hover {
+    color: var(--accent-color);
+}
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.footer-bottom-text {
+    color: var(--neutral-color);
+    font-size: 0.85rem;
+}
+
+/* --- Responsive Adjustments (Bootstrap handles most, add specifics if needed) --- */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 0; /* Remove body padding when navbar might not be fixed or changes layout */
+    }
+    .hero-section {
+        min-height: 70vh;
+    }
+    h2.section-title {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+    .navbar-nav .btn-accent {
+        margin-top: 0.5rem;
+        display: inline-block; /* Adjust display */
+        width: auto; /* Adjust width */
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        font-size: 16px; /* Adjust base font size for mobile */
+    }
+    .hero-section h1 {
+        font-size: 2.8rem; /* Adjust hero heading size */
+    }
+    .hero-section {
+        min-height: 60vh;
+        text-align: center; /* Ensure text is centered */
+    }
+    .hero-content .lead {
+        font-size: 1.1rem; /* Adjust lead size */
+    }
+    h2.section-title {
+        font-size: 2rem;
+    }
+    .display-3 { /* Override Bootstrap if needed */
+        font-size: calc(1.4rem + 3vw);
+    }
+    .lead {
+         font-size: 1rem;
+    }
+    .site-footer {
+        text-align: center; /* Center footer content */
+        padding: 3rem 0;
+    }
+    .site-footer .text-lg-end { /* Override alignment */
+        text-align: center !important;
+    }
+    .site-footer .col-lg-4, .site-footer .col-md-6 {
+        margin-bottom: 2rem; /* Add space between stacked footer columns */
+    }
+    .site-footer .col-lg-4:last-child, .site-footer .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+}
