@@ -1,5 +1,7 @@
 # Delicious Bites Restaurant Website
 
+[![Static-Restaurant-Website](https://img.shields.io/badge/Static%20Restaurant-Website-blue?style=flat-square&labelColor=blue&color=gray)](https://naviandrei.github.io/static-restaurant-website)
+
 A modern, responsive website for Delicious Bites restaurant, showcasing authentic cuisine and providing an engaging user experience.
 
 ## Features
